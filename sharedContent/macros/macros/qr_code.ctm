@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task schemaVersion="4.0" runNLS="never">
+	<Registration>
+	    <Name>Generate a QR Code</Name>
+	    <Description>Generate a QR Code</Description>
+	    <GUID>*</GUID>
+		<Procedures>HTTP</Procedures>
+		<Version>3.5</Version>
+		<Links>
+		<Link href="http://support.sas.com/kb/45/594.html">Generating a QR Code using PROC HTTP</Link>
+		</Links>
+	</Registration>
+	<Metadata>
+		
+		<DataSources>	
+		</DataSources>
+
+		<Options>
+			<Option name="OPTIONSTAB" inputType="string">OPTIONS</Option>
+			<Option name="textEXAMPLE" defaultValue="My QR Code" inputType="inputtext"
+				indent="1"
+				required="true"
+				promptMessage="Text for your QR Code"
+				missingMessage="Missing text.">Input text:</Option>
+		</Options>
+		
+	  </Metadata>
+	  <UI>
+	  <Container option="OPTIONSTAB">
+	  <OptionItem option="textEXAMPLE"/>
+	  </Container>
+	  </UI>
+	
+  	<CodeTemplate>
+		<![CDATA[
+filename url url "{baseURL}/qr_macros.sas";
+%include url;
+
+filename code temp;
+data _null_;
+	file code;
+	put "$textEXAMPLE";
+	output;
+run;
+
+%generate_qr_code(code,_dataout);
+
+%let _DATAOUT_MIME_TYPE=image/png;
+%let _DATAOUT_NAME=qrcode.png;
+
+		]]>
+	</CodeTemplate>
+</Task>

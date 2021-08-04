@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Snippets>
+
+	<Snippet>
+		<Name label="Import CSV File"/>
+		<Documentation uri="https://support.sas.com/documentation/cdl/en/proc/67916/HTML/default/viewer.htm#n02nz0e7cykqhun14hcppfmd0558.htm" label="IMPORT Procedure"/>
+		<Documentation uri="./sample.csv" label="Sample CSV File"/>
+		<Template uri="./import_csv.sas"/>
+		<Icon uri="http://findicons.com/files/icons/2770/ios_7_icons/128/csv.png"/>
+	</Snippet>
+
+	<Snippet>
+		<Name label="Import a Delimited File"/>
+		<Documentation uri="https://support.sas.com/documentation/cdl/en/proc/67916/HTML/default/viewer.htm#n02nz0e7cykqhun14hcppfmd0558.htm" label="IMPORT Procedure"/>
+		<Documentation uri="./delimiter.txt" label="Sample Delimited File"/>
+		<Template uri="./delimiter.sas"/>
+	</Snippet>
+	
+	<Snippet>
+		<Name label="Import XLS File"/>
+		<Documentation uri="http://www.ats.ucla.edu/stat/sas/faq/xls_files_read_write_proc_import.htm " label="UCLA - SAS FAQ"/>
+		<Documentation uri="./auto.xls" label="Sample XLS File"/>
+		<Template uri="./import_xls.sas"/>
+		<Icon uri="http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/file-extension-xls-icon.png"/>
+	</Snippet>
+
+</Snippets>

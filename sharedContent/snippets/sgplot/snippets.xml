@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Snippets>
+
+	<Snippet type="sample">
+		<Name label="Line colors and styles"/>
+		<Documentation uri="http://support.sas.com/kb/35/864.html" label="Sample 35864: Change line colors"/>
+		<Template uri="./line_color.sas"/>
+		<Icon uri="./color.png"/>
+	</Snippet>
+
+	<Snippet type="sample">
+		<Name label="Line annotation"/>
+		<Template uri="./line_identity.sas"/>
+		<Icon uri="./line.png"/>
+	</Snippet>
+
+	<Snippet type="sample">
+		<Name label="Logarithmic axis annotation"/>
+		<Documentation uri="http://support.sas.com/kb/49/301.html"/>
+		<Template uri="./log_annotate.sas"/>
+		<Icon uri="./correlation.png"/>
+	</Snippet>
+
+	<Snippet type="sample">
+		<Name label="Needle plot"/>
+		<Documentation uri="http://support.sas.com/kb/31/507.html" label="Sample 31507: Creating a needle plot"/>
+		<Template uri="./needle.sas"/>
+		<Icon uri="./needle.png"/>
+	</Snippet>
+
+	<Snippet type="sample">
+		<Name label="Rotate axis example"/>
+		<Template uri="./rotate.sas"/>
+		<Icon uri="./rotate.png"/>
+	</Snippet>
+
+	<Snippet type="sample">
+		<Name label="Create subscripts and superscripts"/>
+		<Icon uri="./text.png"/>
+		<Template uri="./subscripts.sas"/>
+	</Snippet>
+
+	<Snippet type="sample">
+		<Name label="Create a forest plot"/>
+		<Documentation uri="http://support.sas.com/kb/42/867.html" label="Sample 42867: Create a forest plot"/>
+		<Template uri="./forest.sas"/>
+	</Snippet>
+	
+	<Snippet type="sample">
+		<Name label="Create a risk plot"/>
+		<Template uri="./riskplot.sas"/>
+	</Snippet>
+
+	<Snippet type="sample">
+		<Name label="Create a stock chart"/>
+		<Template uri="./stockchart.sas"/> 
+	</Snippet>
+
+	<Snippet type="sample">
+		<Name label="Highlight a value"/>
+		<Template uri="./highlight.sas"/>
+		<Icon uri="./zoomy.png"/>
+	</Snippet>
+
+</Snippets>

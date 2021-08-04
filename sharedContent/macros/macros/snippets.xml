@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Snippets>
+	<Snippet>
+		<Name label="Generate QR Code"/>
+		<Documentation uri="http://support.sas.com/kb/45/594.html" label="Generating a QR Code using PROC HTTP"/>
+		<Template uri="./qr.sas"/>
+		<Icon uri="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/qr_code.png"/>
+	</Snippet>
+</Snippets>

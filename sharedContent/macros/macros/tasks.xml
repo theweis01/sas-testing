@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tasks>
+	<Task>
+		<Name label="Generate QR Code"/>
+		<Template uri="./qr_code.ctm"/>
+		<Icon uri="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/qr_code.png"/>
+	</Task>
+</Tasks>

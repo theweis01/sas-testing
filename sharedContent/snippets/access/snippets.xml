@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Snippets>
+
+	<Snippet>
+		<Name label="Assign Oracle Library"/>
+		<Documentation uri="https://support.sas.com/documentation/cdl/en/acreldb/68028/HTML/default/viewer.htm#p1ujrhdoe1p743n12awcf7mwyg81.htm" label="SAS/ACCESS Interface to Oracle"/>
+		<Template uri="./oracle.sas"/>
+		<Icon uri="http://rocketdock.com/images/screenshots/oracle.png"/>
+	</Snippet>
+
+	<Snippet>
+		<Name label="Assign MySQL Library"/>
+		<Documentation uri="https://support.sas.com/documentation/cdl/en/acreldb/68028/HTML/default/viewer.htm#p02t4dkncyoxu7n1w2ysn79hm7em.htm" label="SAS/ACCESS Interface to MySQL"/>
+		<Template uri="./mysql.sas"/>
+		<Icon uri="http://www.gieson.com/Library/images/icons/150/mysql-commands.jpg"/>
+	</Snippet>
+
+	<Snippet>
+		<Name label="Assign SQL Server Library"/>
+		<Documentation uri="https://support.sas.com/documentation/cdl/en/acreldb/68028/HTML/default/viewer.htm#p0378ek9nfsu5bn1cpsc8woi6qjf.htm" label="SAS/ACCESS Interface to Microsoft SQL Server"/>
+		<Template uri="./mssql.sas"/>
+		<Icon uri="http://downloadol.com/wp-content/uploads/2014/02/SQL-Server-2012-Express-icon.png"/>
+	</Snippet>
+
+	<Snippet>
+		<Name label="Assign DB2 Library"/>
+		<Documentation uri="https://support.sas.com/documentation/cdl/en/acreldb/68028/HTML/default/viewer.htm#p1dzq4zjg1iycgn16l4xj9nnvibt.htm" label="SAS/ACCESS Interface to DB2"/>
+		<Template uri="./db2.sas"/>
+		<Icon uri="http://www.oracle.com/ocom/groups/public/@otn/documents/digitalasset/1880921.png"/>
+	</Snippet>
+
+</Snippets>

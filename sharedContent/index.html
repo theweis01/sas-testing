@@ -1,0 +1,122 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+<title>Repository Toolkit Samples</title>
+</head>
+<script>
+
+/* Resolve the current URL for any relative URLs contained in the repository. */
+  
+function getBaseUrl(url)
+{
+    var querypos=url.indexOf("?");
+    if (querypos>0) url=url.substring(0,querypos);
+ 	var parts=url.split("/");
+ 	var last=parts[parts.length-1];
+ 	var pos=url.indexOf(last);
+ 	return url.substring(0,pos-1);
+ }
+ var baseURL=getBaseUrl(window.location.href);
+
+ function onLoad()
+ {
+	if (baseURL.length==0)
+		baseURL=window.location.href;
+	
+	nodes=document.getElementsByClassName("url");
+	last=baseURL.length-1;
+	if (baseURL.charAt(last)=='/')
+		baseURL=baseURL.substring(0,last);
+
+	for(i=0;i<nodes.length;i++)
+	{
+		var text=baseURL + "/" + nodes[i].innerHTML;
+		nodes[i].innerHTML=" - <i><b>"+text+"</b></i>";
+		nodes[i].style.display="";
+	}
+	
+	nodes=document.getElementsByClassName("urlx");
+	last=baseURL.length-1;
+	if (baseURL.charAt(last)=='/')
+		baseURL=baseURL.substring(0,last);
+
+	for(i=0;i<nodes.length;i++)
+	{
+		var text=baseURL + "/" + nodes[i].innerHTML;
+		nodes[i].innerHTML=text;
+		nodes[i].style.display="";
+	}
+ }
+ 
+</script>
+
+<body onload="onLoad()">
+<h3>Welcome to the SAS Studio Repository Toolkit Samples</h3>
+<p>
+The following sample repositories are available.
+<p>
+<ul>
+<li> <a href="./simple" target="_blank">Simple Repository</a> <span class="url" style="display:none">simple</span>
+<p>
+The simple repository contains the minimal repository definition for a single task category and single snippet category. The only elements in the repository XML files 
+are the required tags. If you've never written a repository this is where to start.
+<p>
+
+<li><a href="./snippets" target="_blank">Snippets Repository</a> <span class="url" style="display:none">snippets</span>
+<p>
+This repository has several snippet categories defined with SAS code taken from the <a href="http://support.sas.com/resources/" target="_knowledge">SAS Knowledge Base and Reference</a> on <a href="http://support.sas.com" target="sas">http://support.sas.com</a>. 
+If you need to provide SAS samples or fragments of SAS code to others in your organization this repository is a good place to start.
+<p>
+In addition to showing several snippet categories this repository demonstrations these additional repository features.
+<ol>
+<li>Specifying an icon for the repository that resides external to the repository.
+<li>Specifying an icon for individual snippet that is contained within the repository.
+<li>Annotating the repository with documentation that is stored in the repository.
+<li>Annotating a snippet category with documentation not stored in the repository.
+<li>Annotating individual snippets with documentation not stored in the repository.
+<li>Referencing data files stored in the repository (See the Import Category) - This approach assumes that the SAS server can access URLs where the repository resides by
+leveraging the <a href="https://support.sas.com/documentation/cdl/en/lestmtsref/68024/HTML/default/viewer.htm#p103pi2vrzn6qhn1e8alrs01jrb7.htm" target="_blank">URL Access Method</a> provided 
+by the SAS language. The SAS code is co-located  with external file and resolved to a complete URL when accessed.
+</ol>
+<p>
+
+<li><a href="./macros" target="_blank">Macro Repository</a> <span class="url" style="display:none">macros</span>
+<p>
+This repository has a snippet and task using SAS macros referenced from the repository. It illustrates how macros can be packaged within a repository and how the <a href="https://support.sas.com/documentation/cdl/en/lestmtsref/68024/HTML/default/viewer.htm#p103pi2vrzn6qhn1e8alrs01jrb7.htm" target="_blank">URL Access Method</a>
+can be used to %INCLUDE the repository macros.
+<p>
+
+<p>
+<li><a href="./tasks" target="_blank">Saved Task Repository</a> <span class="url" style="display:none">tasks</span>
+
+<p>
+This repository has only task models (CTM) and saved tasks (CTK). The default List Data CTM file is in the repository along with the following CTK variants:
+<p>
+<ol>
+<li> List Data - SASHELP.FISH along with an external <a href="http://www.clipartbest.com/cliparts/pc5/kRR/pc5kRRBcB.png" target="_blank">repository icon</a> to display.
+<li> List Data - SASHELP.GAS
+<li> List Data - SASHELP.VOPTIONS with only two columns selected. An internal repository icon should display and an external NESUG paper entitled "<a href="http://www.ats.ucla.edu/stat/sas/library/nesug00/bt3004.pdf" target="_blank">Introduction to SAS Dictionary Tables</a>".
+</ol>
+<p>
+
+</ul>
+
+<ul>
+To predefine all the example repositories the following repositories.xml can be put into global preferences directory.
+
+<p>
+<pre id="all" style="border-style: ridge" width="80%">
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;Repositories&gt;
+&lt;Repository uri=&quot;<span class="urlx" style="display:none">simple</span>&quot; name=&quot;Simple Repository&quot; /&gt;
+&lt;Repository uri=&quot;<span class="urlx" style="display:none">snippets</span>&quot; name=&quot;Snippet Repository&quot; /&gt;
+&lt;Repository uri=&quot;<span class="urlx" style="display:none">macros</span>&quot; name=&quot;Snippet Macro Repository&quot; /&gt;
+&lt;Repository uri=&quot;<span class="urlx" style="display:none">tasks</span>&quot; name=&quot;Saved Task Repository&quot; /&gt;
+&lt;/Repositories&gt;
+
+</pre>
+</ul>
+
+</html>
+

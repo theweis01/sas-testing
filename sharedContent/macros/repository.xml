@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Repository label="Example SAS Studio Repository" version="1.0">
+
+	<Snippets>
+		<Category label="Macro Snippet">
+			<Location uri="./macros/snippets.xml"/>
+		</Category>  
+	</Snippets>
+	
+	
+	<Tasks>
+		<Category label="Consuming Macro Task">
+			<Location uri="./macros/tasks.xml"/>
+		</Category>  
+	</Tasks>
+
+</Repository>

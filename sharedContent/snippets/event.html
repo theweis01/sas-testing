@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html>
+  <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" type="image/x-icon" href="http://sww.sas.com/favicon.ico" />
+  <title> SAS Studio Repository </title>
+   </head>
+
+<script>
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+            function (m, key, value) {
+            vars[key] = value;
+        });
+    return vars;
+}
+
+/* Resolve the current URL for any relative URLs contained in the repository. */
+
+function getBaseUrl(url) 
+{
+    var querypos = url.indexOf("?");
+    if (querypos > 0)
+        url = url.substring(0, querypos);
+    var parts = url.split("/");
+    var last = parts[parts.length - 1];
+    var pos = url.indexOf(last);
+    return url.substring(0, pos - 1);
+}
+
+/* Global parameters for the proxy. */
+var baseURL = getBaseUrl(window.location.href);
+var parms = getUrlVars();
+RegExp.escape = function (text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
+
+String.prototype.replaceAll = function (search, replace) {
+    return this.replace(new RegExp(RegExp.escape(search), 'g'), replace);
+};
+
+
+/*
+ * Proxy main equivalent.
+ */
+
+function onLoad() 
+{
+	try
+	{
+        if (parms["target"]) 
+        {
+            /**
+             * Send an event.
+             */
+		   
+		   var object = new Object();
+           object.event = "error";
+           object.status = 404;
+           object.message = "Same origin policy likely violated.";
+           object.id = parms["id"];
+           object.type = "proxy";
+           console.log(object);
+           
+            window.parent.postMessage(object, parms["target"]);
+        }
+    }
+    catch(e)
+    {
+    	console.log(e);
+   	}
+}
+
+ 
+
+</script>
+   <body onload="try { onLoad(); } catch (e) { console.log(e); }">
+   </body>
+  </html>
